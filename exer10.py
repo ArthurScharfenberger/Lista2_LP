@@ -1,12 +1,14 @@
 area = float(input("Digite a área a ser pintada em metros quadrados: "))
 
 litros = area / 3
-latas = litros / 18 + 1
-preco = int(latas) * 80
+latas = litros / 18
 
-if litros % 18 == 0:
-    latas = litros / 18
-    preco = int(latas) * 80
+if litros % 18 != 0:
+    latas = int(latas) + 1
+else:
+    latas = int(latas)
 
-print(f"Quantidade de latas: {int(latas)}")
-print(f"Preço total: R$ {preco:.2f}")
+preco = latas * 80
+
+print("Quantidade de latas:", latas)
+print("Preço total: R$", preco)
